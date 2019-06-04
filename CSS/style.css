@@ -40,12 +40,20 @@ footer{
 .windows{
   color: silver;
   position: relative;
-  right:100px;
 }
 .box>img{
   height: 150px;
   width: 150px;
   border: solid black 2px;
+}
+@media (min-width:451px){
+  .windows{
+    right: 25px;
+  }
+  h2{
+    right: 30px;
+  }
+
 }
 @media (max-width: 450px){
   body{
@@ -55,5 +63,6 @@ footer{
   }
   footer{
     text-align: center;
+    right:initial;
   }
 }
