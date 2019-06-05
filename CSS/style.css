@@ -1,68 +1,100 @@
-html{
+html {
   height: 100vh;
 }
 
-body{
+/* main body is a grid seperated in 3 different rows */
+body {
   font-family: 'Roboto', sans-serif;
   width: 100%;
   height: 100vh;
-  margin : 0 ; 
-  padding : 0 ;
+  margin: 0;
+  padding: 0;
   display: grid;
   font-size: 10px;
   grid-template-areas:
-  "header"
-  "content"
-  "footer";
+    "header"
+    "content"
+    "footer";
   grid-template-rows: 10% auto 20%;
   background-color: bisque;
+}
 
-  }
-.header{
-  grid-area:header;
+.header {
+  grid-area: header;
   text-align: center;
 }
-.content{
-  grid-area:content;
+
+/* content is another grid within the body with two columns (box1 & box2) */
+.content {
+  grid-area: content;
   text-align: center;
-  display: flex;
-  justify-content: space-around;
   padding: 50px;
-  
+  display: grid;
+  grid-template-areas: "box1 . box2";
+  grid-template-columns: 45% 10% 45%;
+
 }
-footer{
-  background-color: gray;
-  text-align: right;  
-  color: white;
-  grid-area: footer;
-  
+
+.box1 {
+  grid-area: box1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
-.windows{
-  color: silver;
-  position: relative;
+
+.box2 {
+  grid-area: box2;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
 }
-.box>img{
+
+.box1>img,
+.box2>img {
   height: 150px;
   width: 150px;
   border: solid black 2px;
 }
-@media (min-width:451px){
-  .windows{
+
+/* paragraphs same width than the images which have a set width */
+.content>p {
+  width: 154px;
+}
+
+footer {
+  background-color: gray;
+  text-align: right;
+  color: white;
+  grid-area: footer;
+
+}
+
+.windows {
+  color: silver;
+  position: relative;
+}
+
+
+@media (min-width:451px) {
+  .windows {
     right: 25px;
   }
-  h2{
+
+  h2 {
     right: 30px;
   }
 
 }
-@media (max-width: 450px){
-  body{
+
+@media (max-width: 450px) {
+  body {
     font-size: 25px;
     grid-template-rows: 30% auto 30%
-
   }
-  footer{
+
+  footer {
     text-align: center;
-    right:initial;
+    right: initial;
   }
 }
