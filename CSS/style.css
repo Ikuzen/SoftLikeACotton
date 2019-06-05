@@ -58,7 +58,7 @@ body {
 }
 
 /* paragraphs same width than the images which have a set width */
-.content>p {
+.content> .box1 >p, .content>.box2>p{
   width: 154px;
 }
 
